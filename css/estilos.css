@@ -1,0 +1,213 @@
+/* Incluye el padding y el borde dentro del tamaño de los elementos */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos generales de la página */
+body {
+    margin: 0; /* Quita el margen predeterminado */
+    min-height: 100vh; /* Ocupa como mínimo toda la pantalla */
+    padding: 35px 16px; /* Agrega espacio alrededor del contenido */
+    display: flex; /* Permite centrar el panel */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    font-family: Arial, sans-serif; /* Usa una fuente sencilla */
+    color: #252a32; /* Color principal del texto */
+    background: #f3f4f6; /* Fondo gris claro */
+}
+
+/* Panel principal que contiene el rastreador */
+.contenedor {
+    width: 100%; /* Usa el ancho disponible */
+    max-width: 950px; /* Limita el ancho en pantallas grandes */
+}
+
+.panel {
+    padding: 55px 13%; /* Deja espacio alrededor del contenido */
+    border: 2px solid #292d33; /* Borde oscuro parecido a la maqueta */
+    border-radius: 22px; /* Redondea las esquinas */
+    background: #ffffff; /* Fondo blanco */
+}
+
+/* Encabezado de la aplicación */
+.encabezado {
+    margin-bottom: 25px; /* Separa el título del formulario */
+}
+
+.etiqueta {
+    margin: 0 0 8px; /* Controla el espacio inferior */
+    color: #68758e; /* Color secundario */
+    font-size: 11px; /* Texto pequeño */
+    font-weight: bold; /* Resalta la etiqueta */
+    letter-spacing: 2px; /* Separa las letras */
+}
+
+h1 {
+    margin: 0 0 8px; /* Quita el margen superior */
+    font-size: 29px; /* Tamaño del título */
+    font-weight: normal; /* Mantiene el título ligero */
+}
+
+.descripcion {
+    margin: 0; /* Quita el margen predeterminado */
+    color: #737b87; /* Color de texto secundario */
+    font-size: 14px; /* Tamaño de la descripción */
+    line-height: 1.5; /* Mejora la lectura */
+}
+
+/* Campo para escribir nuevas tareas */
+.formulario {
+    display: flex; /* Coloca el campo y el botón en una fila */
+    align-items: center; /* Centra verticalmente los elementos */
+    gap: 8px; /* Separa el campo del botón */
+    padding: 5px; /* Espacio interior del formulario */
+    border: 2px solid #454b53; /* Borde del campo */
+    border-radius: 12px; /* Esquinas redondeadas */
+    background: #ffffff; /* Fondo blanco */
+}
+
+.formulario:focus-within {
+    outline: 3px solid #d8def0; /* Resalta el formulario cuando se escribe */
+}
+
+.formulario input {
+    flex: 1; /* Permite que el campo ocupe el espacio restante */
+    min-width: 0; /* Evita que se salga del contenedor */
+    padding: 10px; /* Espacio dentro del campo */
+    border: none; /* Quita el borde propio del input */
+    outline: none; /* Quita el contorno predeterminado */
+    color: #252a32; /* Color del texto escrito */
+    font-size: 16px; /* Tamaño del texto */
+}
+
+.formulario input::placeholder {
+    color: #b7bec9; /* Color claro del texto de ayuda */
+}
+
+.boton-agregar {
+    width: 48px; /* Ancho del botón */
+    height: 42px; /* Alto del botón */
+    border: none; /* Quita el borde */
+    border-radius: 9px; /* Redondea las esquinas */
+    background: #111111; /* Fondo negro */
+    color: #ffffff; /* Símbolo blanco */
+    font-size: 25px; /* Tamaño del símbolo */
+    cursor: pointer; /* Indica que se puede pulsar */
+}
+
+.boton-agregar:hover {
+    background: #414650; /* Cambia el fondo al pasar el cursor */
+}
+
+/* Lista de tareas */
+.lista-tareas {
+    margin: 25px 0 0; /* Separa la lista del formulario */
+    padding: 0; /* Quita el espacio interior */
+    list-style: none; /* Quita las viñetas */
+}
+
+.tarea {
+    display: flex; /* Organiza casilla, texto y botón en una fila */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 14px; /* Separa los elementos */
+    min-height: 55px; /* Altura mínima de cada tarea */
+    padding: 9px 3px; /* Espacio interior de la fila */
+    border-bottom: 2px solid #e7e7e7; /* Línea divisoria */
+}
+
+/* Casilla para marcar una tarea */
+.tarea input[type="checkbox"] {
+    width: 25px; /* Ancho de la casilla */
+    height: 25px; /* Alto de la casilla */
+    flex-shrink: 0; /* Evita que la casilla se encoja */
+    accent-color: #777777; /* Color cuando está marcada */
+    cursor: pointer; /* Indica que se puede marcar */
+}
+
+/* Texto de la tarea */
+.texto-tarea {
+    flex: 1; /* Ocupa el espacio libre */
+    font-size: 17px; /* Tamaño del texto */
+    line-height: 1.4; /* Separa las líneas si el texto es largo */
+    overflow-wrap: anywhere; /* Permite partir textos largos */
+}
+
+/* Apariencia de una tarea completada */
+.tarea.completada .texto-tarea {
+    color: #999999; /* Aclara el texto */
+    text-decoration: line-through; /* Dibuja una línea sobre el texto */
+}
+
+/* Botón para eliminar una tarea */
+.boton-eliminar {
+    flex-shrink: 0; /* Evita que el botón se encoja */
+    width: 32px; /* Ancho del botón */
+    height: 32px; /* Alto del botón */
+    border: none; /* Quita el borde */
+    border-radius: 6px; /* Redondea las esquinas */
+    background: transparent; /* Deja el fondo transparente */
+    color: #252a32; /* Color del símbolo */
+    font-size: 22px; /* Tamaño del símbolo */
+    cursor: pointer; /* Indica que se puede pulsar */
+}
+
+.boton-eliminar:hover {
+    background: #f0eeee; /* Resalta el botón al pasar el cursor */
+    color: #a33232; /* Cambia el símbolo a rojo */
+}
+
+/* Mensaje que aparece cuando la lista está vacía */
+.mensaje-vacio {
+    margin: 25px 0 0; /* Separa el mensaje del formulario */
+    color: #7b8490; /* Color secundario */
+    text-align: center; /* Centra el mensaje */
+    font-size: 14px; /* Tamaño del texto */
+}
+
+/* Resumen que aparece al final de la lista */
+.resumen {
+    display: flex; /* Coloca los textos en una fila */
+    justify-content: space-between; /* Los separa a los extremos */
+    gap: 12px; /* Deja espacio entre los textos */
+    margin-top: 20px; /* Separa el resumen de las tareas */
+    color: #858b95; /* Color suave */
+    font-size: 12px; /* Texto pequeño */
+}
+
+/* Oculta visualmente la etiqueta, pero la mantiene disponible para lectores de pantalla */
+.texto-oculto {
+    position: absolute; /* Saca la etiqueta del flujo normal */
+    width: 1px; /* Reduce su ancho */
+    height: 1px; /* Reduce su alto */
+    padding: 0; /* Quita el espacio interior */
+    margin: -1px; /* La desplaza fuera de la vista */
+    overflow: hidden; /* Oculta el contenido visual */
+    clip: rect(0, 0, 0, 0); /* Recorta el área visible */
+    white-space: nowrap; /* Evita que el texto salte de línea */
+    border: 0; /* Quita el borde */
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    body {
+        align-items: flex-start; /* Evita forzar el centrado vertical */
+        padding: 20px 12px; /* Reduce el espacio exterior */
+    }
+
+    .panel {
+        padding: 32px 20px; /* Reduce el espacio interior */
+        border-radius: 16px; /* Ajusta las esquinas */
+    }
+
+    h1 {
+        font-size: 25px; /* Reduce el título */
+    }
+
+    .texto-tarea {
+        font-size: 15px; /* Reduce el texto de cada tarea */
+    }
+
+    .resumen {
+        flex-direction: column; /* Coloca el resumen en dos líneas */
+    }
+}

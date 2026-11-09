@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> <!-- Permite mostrar tildes y caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Adapta la página a celulares -->
+    <meta name="description" content="Aplicación sencilla para organizar tareas."> <!-- Describe la página -->
+    <title>Task Tracker - Rastreador de tareas</title> <!-- Título de la pestaña -->
+
+    <link rel="stylesheet" href="css/estilos.css"> <!-- Conecta los estilos CSS -->
+    <script src="script.js" defer></script> <!-- Carga JavaScript después de leer el HTML -->
+</head>
+<body>
+    <!-- Contenedor principal de la aplicación -->
+    <main class="contenedor">
+        <section class="panel">
+            <header class="encabezado">
+                <p class="etiqueta"></p>
+                <h1>Task Tracker</h1>
+                <p class="descripcion">Escribe tus tareas y lleva un control de lo que tienes pendiente.</p>
+            </header>
+
+            <!-- Formulario para escribir y agregar una tarea -->
+            <form id="formulario-tarea" class="formulario">
+                <label class="texto-oculto" for="entrada-tarea">Nueva tarea</label>
+                <input
+                    type="text"
+                    id="entrada-tarea"
+                    placeholder="Escribe y presiona Enter para crear una tarea"
+                    autocomplete="off"
+                    maxlength="100"
+                    required>
+                <button type="submit" class="boton-agregar" aria-label="Agregar tarea">↵</button>
+            </form>
+
+            <!-- Aquí JavaScript mostrará la lista de tareas -->
+            <ul id="lista-tareas" class="lista-tareas" aria-label="Lista de tareas"></ul>
+
+            <!-- Mensaje que aparece cuando no hay tareas -->
+            <p id="mensaje-vacio" class="mensaje-vacio" hidden>No tienes tareas todavía. ¡Agrega la primera!</p>
+
+            <!-- Resumen de tareas pendientes y completadas -->
+            <footer class="resumen">
+                <span id="contador-tareas">0 tareas</span>
+                <span>Las tareas completadas aparecen al final.</span>
+            </footer>
+        </section>
+    </main>
+</body>
+</html>
